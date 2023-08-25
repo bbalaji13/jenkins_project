@@ -2,11 +2,12 @@ pipeline {
     agent any
     
     stages {
+    stages {
         stage('Build Backend') {
             steps {
                 dir('backend') {
                     sh 'python3 -m venv venv'
-                    sh 'source venv/bin/activate && pip install -r requirements.txt'
+                    sh '/var/lib/jenkins/workspace/one/backend/venv/bin/activate && pip install -r requirements.txt'
                 }
             }
         }
